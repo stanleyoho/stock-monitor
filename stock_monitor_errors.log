@@ -97,3 +97,5 @@
 2025-08-08 01:41:17,381 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:17] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
 2025-08-08 01:41:18,337 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:18] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
 2025-08-08 01:42:06,022 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:42:06] "[35m[1mGET /api/risk-management/QQQ HTTP/1.1[0m" 500 -
+2025-08-08 01:46:20,540 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:46:20] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:46:21,100 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:46:21] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
