@@ -1,0 +1,538 @@
+/* 股票監控儀表板樣式 v3.0 - 優化閱讀性版本 */
+
+/* 繼承原有樣式 */
+@import url('style.css');
+@import url('style_v2.css');
+
+/* ============================================
+   整體布局優化
+   ============================================ */
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   導航欄優化
+   ============================================ */
+
+.navbar {
+    border-radius: 15px;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   卡片統一樣式
+   ============================================ */
+
+.card {
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 20px 25px !important;
+    border: none !important;
+    font-size: 1.1rem;
+}
+
+.card-header h5, .card-header h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 25px !important;
+}
+
+/* ============================================
+   策略選擇卡片優化
+   ============================================ */
+
+.strategy-card {
+    background: white !important;
+    border: 3px solid #e0e6ed !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+    min-height: 180px !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.strategy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.strategy-card:hover::before,
+.strategy-card.active::before {
+    transform: scaleX(1);
+}
+
+.strategy-card:hover {
+    border-color: #667eea !important;
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2) !important;
+}
+
+.strategy-card.active {
+    background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%) !important;
+    border-color: #667eea !important;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25) !important;
+}
+
+.strategy-title {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 12px !important;
+}
+
+.strategy-card.active .strategy-title {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.strategy-description {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #5a6c7d !important;
+}
+
+.badge-risk {
+    padding: 6px 14px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   市場概況面板優化
+   ============================================ */
+
+.market-indicator {
+    background: white !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+    text-align: center;
+}
+
+.market-indicator:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.indicator-label {
+    font-size: 0.85rem !important;
+    color: #8492a6 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px !important;
+    font-weight: 600;
+}
+
+.indicator-value {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 0;
+}
+
+#vixLevel {
+    font-size: 2.5rem !important;
+}
+
+#marketSentiment {
+    font-size: 1.8rem !important;
+}
+
+#portfolioValue {
+    color: #667eea !important;
+}
+
+#expectedReturn.sentiment-greed {
+    color: #00d084 !important;
+}
+
+/* ============================================
+   交易信號卡片優化
+   ============================================ */
+
+.enhanced-signal {
+    background: white !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    margin-bottom: 25px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+    border: 3px solid transparent !important;
+    transition: all 0.4s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.enhanced-signal::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, transparent);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.signal-buy {
+    border-color: #00d084 !important;
+    background: linear-gradient(135deg, #f0fff4 0%, #dcffe4 100%) !important;
+}
+
+.signal-buy::after {
+    background: linear-gradient(45deg, #00d084, #00a86b);
+}
+
+.signal-sell {
+    border-color: #ff4757 !important;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%) !important;
+}
+
+.signal-sell::after {
+    background: linear-gradient(45deg, #ff4757, #ff6348);
+}
+
+.signal-hold {
+    border-color: #ffa502 !important;
+    background: linear-gradient(135deg, #fffdf5 0%, #fff4e0 100%) !important;
+}
+
+.signal-hold::after {
+    background: linear-gradient(45deg, #ffa502, #ff8c00);
+}
+
+.enhanced-signal h6 {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 8px !important;
+}
+
+.stock-price {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    margin: 20px 0 !important;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.signal-badge {
+    padding: 10px 20px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    border-radius: 25px !important;
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+}
+
+.signal-buy .signal-badge {
+    background: linear-gradient(135deg, #00d084, #00a86b) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(0, 208, 132, 0.3);
+}
+
+.signal-sell .signal-badge {
+    background: linear-gradient(135deg, #ff4757, #ff6348) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+}
+
+.signal-hold .signal-badge {
+    background: linear-gradient(135deg, #ffa502, #ff8c00) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(255, 165, 2, 0.3);
+}
+
+/* ============================================
+   技術指標顯示優化
+   ============================================ */
+
+.indicator {
+    background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%) !important;
+    border-radius: 15px !important;
+    padding: 12px 16px !important;
+    margin: 8px 0 !important;
+    transition: all 0.3s ease;
+}
+
+.indicator:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+}
+
+.indicator-label {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #8492a6 !important;
+    margin-bottom: 5px;
+}
+
+.indicator-value {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    color: #2c3e50 !important;
+}
+
+/* ============================================
+   信心度條優化
+   ============================================ */
+
+.confidence-bar {
+    height: 10px !important;
+    background: #e8ecf1 !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+    margin: 20px 0 !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.confidence-fill {
+    height: 100% !important;
+    background: linear-gradient(90deg, #ff4757 0%, #ffa502 50%, #00d084 100%) !important;
+    border-radius: 10px !important;
+    transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* ============================================
+   按鈕優化
+   ============================================ */
+
+.btn {
+    border-radius: 12px !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3) !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+.btn-outline-light {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    color: white !important;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-color: white !important;
+}
+
+/* ============================================
+   警報和提示優化
+   ============================================ */
+
+.alert {
+    border-radius: 15px !important;
+    padding: 20px 25px !important;
+    border: none !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+    font-weight: 500;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%) !important;
+    color: #f57c00 !important;
+    border-left: 5px solid #ffa502 !important;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%) !important;
+    color: #2e7d32 !important;
+    border-left: 5px solid #00d084 !important;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%) !important;
+    color: #c62828 !important;
+    border-left: 5px solid #ff4757 !important;
+}
+
+/* ============================================
+   策略標籤樣式強化
+   ============================================ */
+
+.strategy-tag {
+    display: inline-block;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   動畫和過渡效果
+   ============================================ */
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card, .enhanced-signal, .strategy-card {
+    animation: slideInUp 0.6s ease;
+}
+
+/* ============================================
+   響應式設計
+   ============================================ */
+
+@media (max-width: 992px) {
+    .container-fluid {
+        padding: 15px;
+    }
+    
+    .card-header {
+        padding: 15px 20px !important;
+    }
+    
+    .card-body {
+        padding: 20px !important;
+    }
+    
+    .enhanced-signal {
+        padding: 20px !important;
+    }
+    
+    .stock-price {
+        font-size: 1.8rem !important;
+    }
+    
+    .indicator-value {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .strategy-card {
+        min-height: 150px !important;
+        padding: 20px !important;
+    }
+    
+    .strategy-title {
+        font-size: 1.1rem !important;
+    }
+    
+    .stock-price {
+        font-size: 1.5rem !important;
+    }
+    
+    .market-indicator {
+        padding: 15px !important;
+    }
+    
+    .indicator-value {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ============================================
+   深色模式支援（可選）
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+    }
+    
+    .card {
+        background: rgba(30, 30, 45, 0.95) !important;
+        color: #e0e0e0;
+    }
+    
+    .strategy-card,
+    .enhanced-signal,
+    .market-indicator {
+        background: #1a1a2e !important;
+        color: #e0e0e0;
+    }
+    
+    .indicator {
+        background: linear-gradient(135deg, #2a2a3e, #1a1a2e) !important;
+    }
+    
+    .indicator-value,
+    .strategy-title,
+    .enhanced-signal h6 {
+        color: #e0e0e0 !important;
+    }
+}

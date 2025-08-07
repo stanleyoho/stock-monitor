@@ -1,0 +1,99 @@
+2025-08-08 01:21:21,876 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 01:21:21,884 - werkzeug - INFO -  * Debugger PIN: 763-053-029
+2025-08-08 01:22:02,311 - werkzeug - INFO -  * Detected change in '/Users/stanley/project_python/stock-monitor/app_v2.py', reloading
+2025-08-08 01:22:03,003 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 01:22:03,009 - werkzeug - INFO -  * Debugger PIN: 763-053-029
+2025-08-08 01:22:19,632 - werkzeug - INFO -  * Detected change in '/Users/stanley/project_python/stock-monitor/modules/stock_analyzer.py', reloading
+2025-08-08 01:22:20,254 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 01:22:20,263 - werkzeug - INFO -  * Debugger PIN: 763-053-029
+2025-08-08 01:22:55,489 - werkzeug - INFO -  * Detected change in '/Users/stanley/project_python/stock-monitor/modules/stock_analyzer.py', reloading
+2025-08-08 01:28:33,258 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-08-08 01:28:33,259 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-08 01:28:33,259 - werkzeug - INFO -  * Restarting with stat
+2025-08-08 01:28:33,736 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 01:28:33,744 - werkzeug - INFO -  * Debugger PIN: 763-053-029
+2025-08-08 01:28:39,709 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:28:39] "GET / HTTP/1.1" 200 -
+2025-08-08 01:28:39,737 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:28:39] "GET /static/css/style_compact.css HTTP/1.1" 200 -
+2025-08-08 01:28:39,737 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:28:39] "GET /static/js/app_v2.js HTTP/1.1" 200 -
+2025-08-08 01:28:40,022 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:28:40] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:28:41,665 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:28:41] "GET /api/signals?strategy=momentum HTTP/1.1" 200 -
+2025-08-08 01:28:42,658 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:28:42] "GET /api/portfolio?strategy=momentum HTTP/1.1" 200 -
+2025-08-08 01:29:12,482 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:29:12] "POST /api/strategy/switch HTTP/1.1" 200 -
+2025-08-08 01:29:13,857 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:29:13] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:29:14,855 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:29:14] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:29:20,016 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:29:20] "POST /api/strategy/switch HTTP/1.1" 200 -
+2025-08-08 01:29:21,392 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:29:21] "GET /api/signals?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:29:22,424 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:29:22] "GET /api/portfolio?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:29,489 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:29] "GET / HTTP/1.1" 200 -
+2025-08-08 01:32:29,515 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:29] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:32:29,516 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:29] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:32:29,532 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:29] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:32:30,893 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:30] "GET /api/signals?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:31,860 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:31] "GET /api/portfolio?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:34,306 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:34] "GET / HTTP/1.1" 200 -
+2025-08-08 01:32:34,328 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:34] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:32:34,329 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:34] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:32:34,344 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:34] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:32:35,748 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:35] "GET /api/signals?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:36,765 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:36] "GET /api/portfolio?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:39,852 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:39] "GET / HTTP/1.1" 200 -
+2025-08-08 01:32:39,875 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:39] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:32:39,876 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:39] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:32:39,885 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:39] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:32:41,291 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:41] "GET /api/signals?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:42,278 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:42] "GET /api/portfolio?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:45,616 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:45] "GET / HTTP/1.1" 200 -
+2025-08-08 01:32:45,632 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:45] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:32:45,632 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:45] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:32:45,641 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:45] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:32:46,921 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:46] "GET /api/signals?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:47,893 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:47] "GET /api/portfolio?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:49,162 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:49] "GET / HTTP/1.1" 200 -
+2025-08-08 01:32:49,184 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:49] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:32:49,185 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:49] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:32:49,194 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:49] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:32:50,614 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:50] "GET /api/signals?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:32:51,588 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:32:51] "GET /api/portfolio?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:33:00,186 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:00] "GET / HTTP/1.1" 200 -
+2025-08-08 01:33:00,209 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:00] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:33:00,211 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:00] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:33:00,222 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:00] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:33:01,544 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:01] "POST /api/strategy/switch HTTP/1.1" 200 -
+2025-08-08 01:33:01,580 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:01] "GET /api/signals?strategy=buy_hold HTTP/1.1" 200 -
+2025-08-08 01:33:02,615 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:02] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:33:02,883 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:02] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:33:04,051 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:04] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:33:49,492 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:49] "GET / HTTP/1.1" 200 -
+2025-08-08 01:33:49,517 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:49] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:33:49,518 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:49] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:33:49,528 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:49] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:33:50,929 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:50] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:33:51,982 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:33:51] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:34:03,270 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:03] "GET / HTTP/1.1" 200 -
+2025-08-08 01:34:03,290 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:03] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:34:03,290 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:03] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:34:03,306 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:03] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:34:04,267 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:04] "GET / HTTP/1.1" 200 -
+2025-08-08 01:34:04,291 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:04] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:34:04,292 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:04] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:34:04,299 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:04] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:34:04,707 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:04] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:34:05,675 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:05] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:34:06,708 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:34:06] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:39:06,099 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:39:06] "GET / HTTP/1.1" 200 -
+2025-08-08 01:39:06,121 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:39:06] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:39:06,121 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:39:06] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:39:06,137 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:39:06] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:39:07,506 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:39:07] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:39:08,067 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:39:08] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:39:13,834 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:39:13] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:39:13,841 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:39:13] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-08 01:41:15,793 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:15] "GET / HTTP/1.1" 200 -
+2025-08-08 01:41:15,816 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:15] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-08 01:41:15,822 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:15] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:41:15,823 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:15] "[36mGET /static/js/app_v2.js HTTP/1.1[0m" 304 -
+2025-08-08 01:41:15,895 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:15] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:41:17,381 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:17] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:41:18,337 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:41:18] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:42:06,022 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:42:06] "[35m[1mGET /api/risk-management/QQQ HTTP/1.1[0m" 500 -

@@ -1,0 +1,568 @@
+/* 股票監控儀表板樣式 */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 8px;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0 !important;
+    font-weight: 600;
+}
+
+/* 信號樣式 */
+.signal-item {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.signal-buy {
+    border-color: #28a745;
+    background-color: #f8fff9;
+}
+
+.signal-sell {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.signal-hold {
+    border-color: #ffc107;
+    background-color: #fffdf5;
+}
+
+.signal-badge {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.signal-buy .signal-badge {
+    background-color: #28a745;
+    color: white;
+}
+
+.signal-sell .signal-badge {
+    background-color: #dc3545;
+    color: white;
+}
+
+.signal-hold .signal-badge {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* 股票價格顯示 */
+.stock-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.stock-change {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.positive {
+    color: #28a745;
+}
+
+.negative {
+    color: #dc3545;
+}
+
+/* 技術指標顯示 */
+.indicator {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.indicator-label {
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.indicator-value {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* 市場指標顯示 */
+.market-indicator {
+    background-color: #ffffff;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.market-indicator:hover {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.1);
+}
+
+.market-indicator .indicator-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.market-indicator .indicator-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* VIX情緒顏色 */
+.sentiment-greed { color: #28a745; }
+.sentiment-neutral { color: #ffc107; }
+.sentiment-fear { color: #fd7e14; }
+.sentiment-panic { color: #dc3545; }
+
+/* 信號增強樣式 */
+.enhanced-signal {
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.enhanced-signal::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #6c757d;
+}
+
+.enhanced-signal.signal-buy::before {
+    background-color: #28a745;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.enhanced-signal.signal-sell::before {
+    background-color: #dc3545;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+}
+
+.confidence-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #e9ecef;
+    border-radius: 3px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.confidence-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745 0%, #ffc107 50%, #dc3545 100%);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+/* 策略標籤 */
+.strategy-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.strategy-momentum { background-color: #e3f2fd; color: #1976d2; }
+.strategy-trend { background-color: #f3e5f5; color: #7b1fa2; }
+.strategy-steady { background-color: #e8f5e8; color: #388e3c; }
+.strategy-taiwan { background-color: #fff3e0; color: #f57c00; }
+
+/* 預期報酬展示 */
+.return-projection {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.return-projection:hover {
+    border-color: #28a745;
+    background-color: #f8fff9;
+}
+
+.return-time {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.return-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 5px;
+}
+
+.return-amount {
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+/* 動態平衡提醒 */
+.rebalance-suggestion {
+    background-color: #fff8dc;
+    border: 1px solid #ffeaa7;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 8px 0;
+}
+
+.rebalance-action {
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.rebalance-buy {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.rebalance-sell {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* 進階檢視切換 */
+.advanced-info {
+    display: none;
+    border-top: 1px solid #dee2e6;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.show-advanced .advanced-info {
+    display: block;
+}
+
+/* 動畫效果 */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.updating {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* 策略選擇卡片 */
+.strategy-card {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.strategy-card:hover {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.1);
+    transform: translateY(-2px);
+}
+
+.strategy-card.active {
+    border-color: #28a745;
+    background-color: #f8fff9;
+    box-shadow: 0 2px 8px rgba(40,167,69,0.2);
+}
+
+.strategy-header {
+    display: flex;
+    justify-content-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.strategy-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.strategy-active-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #28a745;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* 策略比較面板 */
+.strategy-rank-card {
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.strategy-rank-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.strategy-rank {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.metric-label {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.metric-value {
+    font-weight: bold;
+}
+
+/* 錯誤信號樣式 */
+.signal-error {
+    border-color: #dc3545;
+    background-color: #fff5f5;
+}
+
+/* 股票管理模態框 */
+.modal .stock-item {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+/* 策略標籤增強 */
+.strategy-mixed { background-color: #e9ecef; color: #495057; }
+
+/* 圖表容器 */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 10px 0;
+}
+
+/* 更新時間 */
+.update-time {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .stock-price {
+        font-size: 1.2rem;
+    }
+    
+    .signal-item {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+}
+
+/* 載入動畫 */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+.spinner-border {
+    color: #007bff;
+}
+
+/* 警報樣式 */
+.alert-success {
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    border-left: 4px solid #dc3545;
+}
+
+.alert-warning {
+    border-left: 4px solid #ffc107;
+}
+
+/* 滾動條樣式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* 策略控制中心樣式 */
+.strategy-info-panel {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.strategy-section {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.strategy-section:hover {
+    border-left-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.1);
+}
+
+.strategy-title {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.strategy-description {
+    color: #6c757d;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.condition-list {
+    margin: 0;
+    padding: 0;
+}
+
+.condition-item {
+    color: #495057;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.condition-item:before {
+    content: '•';
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.condition-tip {
+    color: #28a745;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background-color: #f8fff9;
+    border-radius: 4px;
+    border-left: 3px solid #28a745;
+}
+
+.section-title {
+    color: #495057;
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.signals-section {
+    margin-top: 15px;
+}
+
+/* 按鈕樣式調整 */
+.btn-outline-light:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5);
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .strategy-info-panel {
+        padding: 15px;
+    }
+    
+    .strategy-section {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .strategy-title {
+        font-size: 0.9rem;
+    }
+    
+    .condition-item, .strategy-description {
+        font-size: 0.8rem;
+    }
+}

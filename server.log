@@ -1,0 +1,8 @@
+🚀 啟動股票監控系統 v2.0
+📊 已載入3個交易策略
+📈 監控5支股票
+🌐 服務器運行在 http://localhost:5001
+ * Serving Flask app 'app_v2'
+ * Debug mode: on
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.

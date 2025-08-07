@@ -1,0 +1,68 @@
+{
+  "QQQ": [
+    {
+      "signal": "BUY",
+      "confidence": 0.95,
+      "timestamp": "2025-08-08T01:28:40.621304",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(56.2)"
+      ],
+      "strategy": "momentum"
+    }
+  ],
+  "NVDA": [
+    {
+      "signal": "BUY",
+      "confidence": 0.95,
+      "timestamp": "2025-08-08T01:28:40.758145",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(60.8)"
+      ],
+      "strategy": "momentum"
+    }
+  ],
+  "VOO": [
+    {
+      "signal": "BUY",
+      "confidence": 0.95,
+      "timestamp": "2025-08-08T01:28:40.885840",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(53.3)"
+      ],
+      "strategy": "momentum"
+    }
+  ],
+  "0050.TW": [
+    {
+      "signal": "BUY",
+      "confidence": 1.0,
+      "timestamp": "2025-08-08T01:28:41.022330",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(60.9)",
+        "成交量放大確認(1.7倍)"
+      ],
+      "strategy": "momentum"
+    }
+  ],
+  "00878.TW": [
+    {
+      "signal": "BUY",
+      "confidence": 0.95,
+      "timestamp": "2025-08-08T01:28:41.151298",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(51.1)"
+      ],
+      "strategy": "momentum"
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+/* 股票監控儀表板樣式 v2.0 - 優化版 */
+
+/* 繼承原有樣式 */
+@import url('style.css');
+
+/* 策略選擇卡片優化 */
+.strategy-card {
+    border: 2px solid #dee2e6 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-bottom: 15px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    min-height: 140px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.strategy-card:hover {
+    border-color: #007bff !important;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.15) !important;
+    transform: translateY(-3px) !important;
+}
+
+.strategy-card.active {
+    border-color: #28a745 !important;
+    background: linear-gradient(135deg, #f8fff9 0%, #e8f8ea 100%) !important;
+    box-shadow: 0 4px 12px rgba(40,167,69,0.2) !important;
+}
+
+.strategy-content {
+    width: 100%;
+}
+
+.strategy-header {
+    margin-bottom: 10px !important;
+}
+
+.strategy-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0;
+}
+
+.strategy-card.active .strategy-title {
+    color: #28a745;
+}
+
+.strategy-risk {
+    margin: 8px 0;
+}
+
+.badge-risk {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    font-weight: 500;
+}
+
+.strategy-description {
+    font-size: 0.85rem !important;
+    color: #6c757d !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+}
+
+.strategy-active-indicator {
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    background-color: #28a745 !important;
+    color: white !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.8rem !important;
+    box-shadow: 0 2px 4px rgba(40,167,69,0.3) !important;
+}
+
+/* 改善整體UI */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+    font-weight: 600;
+    padding: 15px 20px;
+}
+
+/* 圖表容器優化 */
+.chart-container {
+    position: relative;
+    height: 350px !important;
+    padding: 10px;
+}
+
+/* 移除無用的投資組合預期報酬下方的卡片區域 */
+#returnProjections + .row {
+    display: none;
+}
+
+/* Loading 狀態樣式 */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    border-radius: 12px;
+}
+
+/* 按鈕優化 */
+.btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 市場指標卡片優化 */
+.market-indicator {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.market-indicator:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.1);
+    transform: translateY(-2px);
+}
+
+/* 信號卡片優化 */
+.enhanced-signal {
+    border-radius: 12px !important;
+    padding: 25px !important;
+    transition: all 0.3s ease !important;
+}
+
+.enhanced-signal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 響應式優化 */
+@media (max-width: 768px) {
+    .strategy-card {
+        min-height: 120px !important;
+        padding: 15px !important;
+    }
+    
+    .strategy-title {
+        font-size: 1rem;
+    }
+    
+    .strategy-description {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* 動畫優化 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Toast 提示樣式 */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+}
+
+.toast {
+    min-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 策略標籤樣式補充 */
+.strategy-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.strategy-buy_hold { 
+    background-color: #e8f5e8; 
+    color: #388e3c; 
+}
+
+.strategy-momentum { 
+    background-color: #e3f2fd; 
+    color: #1976d2; 
+}
+
+.strategy-mean_reversion { 
+    background-color: #f3e5f5; 
+    color: #7b1fa2; 
+}
+
+.strategy-unknown { 
+    background-color: #f5f5f5; 
+    color: #757575; 
+}

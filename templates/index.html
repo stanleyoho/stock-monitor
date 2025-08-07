@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股票監控儀表板 - 策略1波段交易</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">📊 股票監控儀表板</a>
+                        <span class="navbar-text">
+                            策略1: 20日均線+RSI波段交易
+                        </span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- 市場概況面板 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">📊 市場概況與投資組合狀態</h5>
+                        <small>最後更新: <span id="lastUpdate">載入中...</span></small>
+                    </div>
+                    <div class="card-body">
+                        <div id="marketOverview" class="row mb-3">
+                            <div class="col-md-3 text-center">
+                                <div class="market-indicator">
+                                    <div class="indicator-label">VIX恐慌指數</div>
+                                    <div class="indicator-value" id="vixLevel">--</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="market-indicator">
+                                    <div class="indicator-label">市場情緒</div>
+                                    <div class="indicator-value" id="marketSentiment">--</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="market-indicator">
+                                    <div class="indicator-label">投資組合總值</div>
+                                    <div class="indicator-value" id="portfolioValue">--</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="market-indicator">
+                                    <div class="indicator-label">預期年化報酬</div>
+                                    <div class="indicator-value" id="expectedReturn">--</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 動態平衡提醒 -->
+        <div class="row mb-4" id="rebalanceAlert" style="display: none;">
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    <h6><strong>⚖️ 動態平衡提醒</strong></h6>
+                    <div id="rebalanceContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 策略控制中心 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">🎯 策略控制中心</h5>
+                            <div>
+                                <button class="btn btn-outline-light btn-sm me-2" onclick="toggleStrategyInfo()">
+                                    <span id="strategyToggleText">策略說明</span>
+                                </button>
+                                <button class="btn btn-outline-light btn-sm" onclick="toggleAdvancedView()">
+                                    <span id="advancedToggleText">顯示詳細</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- 策略說明摺疊區域 -->
+                        <div id="strategyInfoPanel" class="strategy-info-panel mb-3" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="strategy-section">
+                                        <h6 class="strategy-title">🎯 策略1: 20日均線+RSI波段交易</h6>
+                                        <div class="strategy-description">
+                                            <strong>目標:</strong> 波段交易，掌握超賣超買時機
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="strategy-section">
+                                        <h6 class="strategy-title">🟢 買入條件</h6>
+                                        <div class="condition-list">
+                                            <div class="condition-item">股價跌破20日均線</div>
+                                            <div class="condition-item">RSI < 30 (超賣)</div>
+                                            <div class="condition-tip">💡 建議分批買入</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="strategy-section">
+                                        <h6 class="strategy-title">🔴 賣出條件</h6>
+                                        <div class="condition-list">
+                                            <div class="condition-item">股價突破20日均線</div>
+                                            <div class="condition-item">RSI > 70 (超買)</div>
+                                            <div class="condition-tip">💡 建議分批賣出</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert alert-warning mt-3 mb-0">
+                                <small><strong>⚠️ 風險提醒:</strong> 此為技術分析策略，僅供參考。投資有風險，請根據個人風險承受能力做決定。</small>
+                            </div>
+                        </div>
+                        
+                        <!-- 即時交易信號 -->
+                        <div class="signals-section">
+                            <h6 class="section-title mb-3">🚦 即時交易信號</h6>
+                            <div id="signalsContainer">
+                                <div class="text-center">
+                                    <div class="spinner-border" role="status">
+                                        <span class="visually-hidden">載入中...</span>
+                                    </div>
+                                    <p class="mt-2">正在載入股票數據...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 預期報酬分析 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">📈 投資組合預期報酬分析</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="returnProjections">
+                            <div class="text-center">
+                                <div class="spinner-border text-success" role="status">
+                                    <span class="visually-hidden">計算中...</span>
+                                </div>
+                                <p class="mt-2">正在計算預期報酬...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 股票詳細圖表 -->
+        <div class="row">
+            <div class="col-lg-4 mb-4" id="stock-QQQ">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">QQQ - Nasdaq ETF</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chartQQQ" width="400" height="300"></canvas>
+                        <div class="mt-2" id="detailQQQ">
+                            <small class="text-muted">載入中...</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4" id="stock-NVDA">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">NVDA - 輝達</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chartNVDA" width="400" height="300"></canvas>
+                        <div class="mt-2" id="detailNVDA">
+                            <small class="text-muted">載入中...</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4" id="stock-VOO">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">VOO - S&P 500 ETF</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chartVOO" width="400" height="300"></canvas>
+                        <div class="mt-2" id="detailVOO">
+                            <small class="text-muted">載入中...</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

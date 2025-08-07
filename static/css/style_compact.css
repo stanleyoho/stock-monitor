@@ -1,0 +1,538 @@
+/* 股票監控儀表板 - 簡潔緊湊版 */
+
+/* 重置和基礎樣式 */
+body {
+    background: #f8fafc !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* 導航欄緊湊化 */
+.navbar {
+    background: #1e293b !important;
+    padding: 8px 20px !important;
+    margin-bottom: 20px;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.1rem !important;
+    font-weight: 600;
+}
+
+/* 卡片統一緊湊化 */
+.card {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    margin-bottom: 16px !important;
+    background: white !important;
+}
+
+.card-header {
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 12px 16px !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155 !important;
+}
+
+.card-body {
+    padding: 16px !important;
+}
+
+/* 策略選擇 - 水平緊湊佈局 */
+.strategy-card {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    margin-bottom: 8px !important;
+    cursor: pointer;
+    transition: all 0.2s ease !important;
+    background: white !important;
+    min-height: auto !important;
+}
+
+.strategy-card:hover {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15) !important;
+}
+
+.strategy-card.active {
+    background: #eff6ff !important;
+    border-color: #3b82f6 !important;
+}
+
+.strategy-title {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    margin-bottom: 4px !important;
+}
+
+.strategy-description {
+    font-size: 0.8rem !important;
+    color: #64748b !important;
+    margin-bottom: 6px !important;
+    line-height: 1.4;
+}
+
+.badge-risk {
+    font-size: 0.7rem !important;
+    padding: 2px 8px !important;
+    border-radius: 12px !important;
+}
+
+.strategy-active-indicator {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 16px !important;
+    height: 16px !important;
+    background: #10b981 !important;
+    border-radius: 50%;
+    font-size: 0.6rem !important;
+}
+
+/* 市場指標 - 單行緊湊顯示 */
+.market-indicator {
+    background: white !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    text-align: center;
+    transition: none;
+}
+
+.market-indicator:hover {
+    transform: none !important;
+}
+
+.indicator-label {
+    font-size: 0.7rem !important;
+    color: #64748b !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px !important;
+    font-weight: 500;
+}
+
+.indicator-value {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+}
+
+/* 交易信號 - 緊湊卡片佈局 */
+.enhanced-signal {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    background: white !important;
+    transition: none;
+}
+
+.enhanced-signal h6 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 4px !important;
+    color: #1e293b !important;
+}
+
+.stock-price {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    margin: 8px 0 12px 0 !important;
+    color: #1e293b !important;
+}
+
+.signal-badge {
+    padding: 4px 12px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    border-radius: 16px !important;
+}
+
+/* 信號狀態顏色 */
+.signal-buy {
+    border-left: 4px solid #10b981 !important;
+}
+.signal-buy .signal-badge {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+.signal-sell {
+    border-left: 4px solid #ef4444 !important;
+}
+.signal-sell .signal-badge {
+    background: #ef4444 !important;
+    color: white !important;
+}
+
+.signal-hold {
+    border-left: 4px solid #f59e0b !important;
+}
+.signal-hold .signal-badge {
+    background: #f59e0b !important;
+    color: white !important;
+}
+
+/* 技術指標 - 緊湊網格 */
+.indicator {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 4px !important;
+    padding: 8px 10px !important;
+    margin: 4px 0 !important;
+    transition: none;
+}
+
+.indicator:hover {
+    transform: none;
+}
+
+.indicator .indicator-label {
+    font-size: 0.7rem !important;
+    color: #64748b !important;
+    margin-bottom: 2px !important;
+    font-weight: 500;
+}
+
+.indicator .indicator-value {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+}
+
+/* 信心度條 */
+.confidence-bar {
+    height: 4px !important;
+    background: #e2e8f0 !important;
+    border-radius: 2px !important;
+    margin: 8px 0 !important;
+}
+
+.confidence-fill {
+    height: 100% !important;
+    background: linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #10b981 100%) !important;
+    border-radius: 2px !important;
+    transition: width 0.3s ease !important;
+}
+
+/* 按鈕緊湊化 */
+.btn {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+}
+
+.btn-sm {
+    padding: 4px 8px !important;
+    font-size: 0.75rem !important;
+}
+
+/* 策略標籤 */
+.strategy-tag {
+    font-size: 0.65rem !important;
+    padding: 2px 6px !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+}
+
+/* 警報樣式緊湊化 */
+.alert {
+    padding: 12px 16px !important;
+    margin: 12px 0 !important;
+    border-radius: 6px !important;
+    font-size: 0.85rem;
+}
+
+/* 緊湊網格系統 */
+.row {
+    margin: 0 -8px;
+}
+
+.row > * {
+    padding: 0 8px;
+}
+
+/* 策略比較面板緊湊化 */
+.strategy-rank-card {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    transition: none;
+}
+
+.strategy-rank-card .card-body {
+    padding: 12px !important;
+    text-align: center;
+}
+
+.strategy-rank {
+    font-size: 1.2rem !important;
+    margin-bottom: 6px !important;
+}
+
+.metric-row {
+    font-size: 0.8rem !important;
+    margin-bottom: 2px !important;
+}
+
+/* 移除過多的動畫和陰影 */
+.card:hover,
+.enhanced-signal:hover,
+.strategy-card:hover {
+    transform: none !important;
+}
+
+/* Toast通知緊湊化 */
+.toast {
+    font-size: 0.85rem;
+}
+
+.toast-header {
+    padding: 8px 12px !important;
+}
+
+.toast-body {
+    padding: 8px 12px !important;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 10px;
+    }
+    
+    .card-body {
+        padding: 12px !important;
+    }
+    
+    .enhanced-signal {
+        padding: 12px !important;
+    }
+    
+    .stock-price {
+        font-size: 1.2rem !important;
+    }
+    
+    .indicator-value {
+        font-size: 1.1rem !important;
+    }
+    
+    /* 手機上使用更緊湊的佈局 */
+    .strategy-card {
+        padding: 8px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .market-indicator {
+        padding: 8px !important;
+    }
+}
+
+/* 隱藏不必要的圖標和裝飾 */
+.card-header i,
+.btn i {
+    display: none;
+}
+
+/* 表格樣式（如果需要） */
+.table-sm {
+    font-size: 0.8rem;
+}
+
+.table-sm th,
+.table-sm td {
+    padding: 0.3rem;
+    vertical-align: middle;
+}
+
+/* 狀態指示點 */
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.status-dot.green { background: #10b981; }
+.status-dot.red { background: #ef4444; }
+.status-dot.yellow { background: #f59e0b; }
+
+/* 數據密集顯示 */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.data-item {
+    text-align: center;
+    padding: 6px;
+    background: #f8fafc;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.data-item-label {
+    color: #64748b;
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+}
+
+.data-item-value {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* 緊湊的信號展示替代方案 */
+.signal-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    background: white;
+}
+
+.signal-compact-info {
+    display: flex;
+    align-items: center;
+}
+
+.signal-compact-symbol {
+    font-weight: 600;
+    margin-right: 12px;
+    min-width: 60px;
+}
+
+.signal-compact-price {
+    font-weight: 600;
+    margin-right: 12px;
+    min-width: 80px;
+}
+
+.signal-compact-indicators {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.signal-compact-badge {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* 表格式信號展示（更緊湊） */
+.signals-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.signals-table th {
+    background: #f8fafc;
+    padding: 8px 6px;
+    border-bottom: 2px solid #e2e8f0;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.signals-table td {
+    padding: 6px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.signals-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.table-signal-symbol {
+    font-weight: 600;
+    min-width: 60px;
+}
+
+.table-signal-price {
+    font-weight: 600;
+    text-align: right;
+    min-width: 70px;
+}
+
+.table-signal-badge {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 50px;
+    display: inline-block;
+}
+
+.table-signal-badge.signal-buy {
+    background: #10b981;
+    color: white;
+}
+
+.table-signal-badge.signal-sell {
+    background: #ef4444;
+    color: white;
+}
+
+.table-signal-badge.signal-hold {
+    background: #f59e0b;
+    color: white;
+}
+
+.table-indicators {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* 技術指標緊湊表格 */
+.indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 6px;
+    margin: 8px 0;
+}
+
+.indicator-mini {
+    background: #f8fafc;
+    border-radius: 4px;
+    padding: 4px 6px;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.indicator-mini-label {
+    color: #64748b;
+    font-size: 0.65rem;
+    margin-bottom: 1px;
+}
+
+.indicator-mini-value {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.8rem;
+}
