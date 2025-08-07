@@ -99,3 +99,9 @@
 2025-08-08 01:42:06,022 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:42:06] "[35m[1mGET /api/risk-management/QQQ HTTP/1.1[0m" 500 -
 2025-08-08 01:46:20,540 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:46:20] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
 2025-08-08 01:46:21,100 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:46:21] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:49:32,427 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:49:32] "GET / HTTP/1.1" 200 -
+2025-08-08 01:49:32,453 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:49:32] "GET /static/js/app_v2.js HTTP/1.1" 200 -
+2025-08-08 01:49:32,453 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:49:32] "[36mGET /static/css/style_compact.css HTTP/1.1[0m" 304 -
+2025-08-08 01:49:32,477 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:49:32] "GET /api/strategies HTTP/1.1" 200 -
+2025-08-08 01:49:33,943 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:49:33] "GET /api/signals?strategy=mean_reversion HTTP/1.1" 200 -
+2025-08-08 01:49:34,482 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 01:49:34] "GET /api/portfolio?strategy=mean_reversion HTTP/1.1" 200 -
