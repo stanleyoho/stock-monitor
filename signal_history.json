@@ -10,6 +10,18 @@
         "RSI在健康動量區間(56.2)"
       ],
       "strategy": "momentum"
+    },
+    {
+      "signal": "BUY",
+      "confidence": 1.0,
+      "timestamp": "2025-08-11T23:46:41.508626",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(63.4)",
+        "MACD金叉且為正值"
+      ],
+      "strategy": "momentum"
     }
   ],
   "NVDA": [
@@ -23,6 +35,17 @@
         "RSI在健康動量區間(60.8)"
       ],
       "strategy": "momentum"
+    },
+    {
+      "signal": "SELL",
+      "confidence": 0.8500000000000001,
+      "timestamp": "2025-08-12T00:45:15.670999",
+      "reasons": [
+        "RSI超買(74.0)",
+        "價格接近布林帶上軌(位置:93.0%)",
+        "接近阻力位(0.3%)"
+      ],
+      "strategy": "mean_reversion"
     }
   ],
   "VOO": [
@@ -34,6 +57,17 @@
         "價格高於20日均線",
         "短期均線高於長期均線",
         "RSI在健康動量區間(53.3)"
+      ],
+      "strategy": "momentum"
+    },
+    {
+      "signal": "BUY",
+      "confidence": 0.95,
+      "timestamp": "2025-08-11T23:46:41.804139",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(59.0)"
       ],
       "strategy": "momentum"
     }
@@ -50,6 +84,18 @@
         "成交量放大確認(1.7倍)"
       ],
       "strategy": "momentum"
+    },
+    {
+      "signal": "BUY",
+      "confidence": 1.0,
+      "timestamp": "2025-08-11T23:46:41.955863",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(68.9)",
+        "MACD金叉且為正值"
+      ],
+      "strategy": "momentum"
     }
   ],
   "00878.TW": [
@@ -61,6 +107,18 @@
         "價格高於20日均線",
         "短期均線高於長期均線",
         "RSI在健康動量區間(51.1)"
+      ],
+      "strategy": "momentum"
+    },
+    {
+      "signal": "BUY",
+      "confidence": 1.0,
+      "timestamp": "2025-08-11T23:46:42.075430",
+      "reasons": [
+        "價格高於20日均線",
+        "短期均線高於長期均線",
+        "RSI在健康動量區間(64.4)",
+        "成交量放大確認(1.5倍)"
       ],
       "strategy": "momentum"
     }

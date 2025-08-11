@@ -20,4 +20,4 @@ echo "🌐 啟動Web服務器 (http://localhost:5000)"
 echo "💡 使用 Ctrl+C 停止服務器"
 echo "📊 正在載入股票數據，請稍候..."
 
-python app.py
+python app_v2.py

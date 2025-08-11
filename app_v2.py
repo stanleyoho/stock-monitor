@@ -30,7 +30,7 @@ risk_manager = RiskManager()
 @app.route('/')
 def index():
     """主頁面"""
-    return render_template('index_v2.html')
+    return render_template('index_ultra_compact.html')
 
 @app.route('/api/strategies')
 def get_strategies():
